@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS home_value CASCADE;
 CREATE TABLE neighborhood (
     id INT PRIMARY KEY,
     neighborhood VARCHAR(30), 
-    population INT
+    population_2010 INT
 );
 
 CREATE TABLE crime (
