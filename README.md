@@ -53,28 +53,28 @@ An example table that could be eventually generated using this database might be
 * Assessor and police tables both included neighborhood identifiers, but for the sake of standardization and database size, we decided to replace names with neighborhood IDs.
 
 ## PostgreSQL database
-‘neighborhood’ table
-    id = Column(Integer, primary_key=True)
-    neighborhood = Column(String(255))
-    population_2010 = Column(Integer)
+**‘neighborhood’ table**
+id = Column(Integer, primary_key=True)
+neighborhood = Column(String(255))
+population_2010 = Column(Integer)
 
-‘crime’ table
-    id = Column(Integer, primary_key=True)
-    neighborhood_id = Column(Integer)
-    crime_description = Column(String(255))
-    latitude = Column(Float)
-    longitude = Column(Float)
+**‘crime’ table**
+id = Column(Integer, primary_key=True)
+neighborhood_id = Column(Integer)
+crime_description = Column(String(255))
+latitude = Column(Float)
+longitude = Column(Float)
 
-‘home_value’ table
-    id = Column(Integer, primary_key=True)
-    property_type = Column(String(255))
-    num_bedrooms = Column(Integer)
-    below_grade_sq_footage = Column(Integer)
-    above_grade_sq_footage = Column(Integer)
-    sq_footage_parcel = Column(Integer)
-    address = Column(String(255))
-    landuse = Column(String(255))
-    value_total = Column(Integer)
-    sq_footage_house = Column(Integer)
-    value_per_sq_foot = Column(Float)
-    neighborhood_id = Column(Integer)
+**‘home_value’ table**
+id = Column(Integer, primary_key=True)
+property_type = Column(String(255))
+num_bedrooms = Column(Integer)
+below_grade_sq_footage = Column(Integer)
+above_grade_sq_footage = Column(Integer)
+sq_footage_parcel = Column(Integer)
+address = Column(String(255))
+landuse = Column(String(255))
+value_total = Column(Integer)
+sq_footage_house = Column(Integer)
+value_per_sq_foot = Column(Float)
+neighborhood_id = Column(Integer)
