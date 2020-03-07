@@ -10,7 +10,7 @@ An example table that could be eventually generated using this database might be
   avg_home_price = Column(Integer)
   value_per_sqft = Column(Integer)
   crime_rate = Column(Float)
-  
+
 ## Data sources
 * City of Minneapolis  [Neighborhood](http://opendata.minneapolismn.gov/datasets/minneapolis-neighborhoods)  data - a canonical set of neighborhoods and identifiers
 
@@ -67,13 +67,14 @@ An example table that could be eventually generated using this database might be
 
 ‘home_value’ table
     id = Column(Integer, primary_key=True)
-    neighborhood_id = Column(Integer)
     property_type = Column(String(255))
     num_bedrooms = Column(Integer)
-    sq_footage_house = Column(Integer)
+    below_grade_sq_footage = Column(Integer)
+    above_grade_sq_footage = Column(Integer)
     sq_footage_parcel = Column(Integer)
     address = Column(String(255))
     landuse = Column(String(255))
     value_total = Column(Integer)
-    latitude = Column(Float)
-    longitude = Column(Float)
+    sq_footage_house = Column(Integer)
+    value_per_sq_foot = Column(Float)
+    neighborhood_id = Column(Integer)
