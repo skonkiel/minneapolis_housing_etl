@@ -58,6 +58,8 @@ An example table that could be eventually generated using this database might be
 * Assessor and police tables both included neighborhood identifiers, but for the sake of standardization and database size, we decided to replace names with neighborhood IDs.
 
 ## PostgreSQL database
+![ERD](./erd.png =954x)
+
 **neighborhood** 
 * id INT PRIMARY KEY
 * neighborhood VARCHAR(255)
