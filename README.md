@@ -1,5 +1,8 @@
 # Minneapolis Home Pricing Forecast - ETL Report
 
+## Project Background
+This project was prepared by Katrina Koenders, Stacy Konkiel and Jenna Nytes as part of the University of Minnesota Data Visualization and Analytics Bootcamp. The following project prepares data in response to a hypothetical scenario.
+
 ## Summary
 This project prepares data for a hypothetical real estate analysis team, who want to find opportunities for investment. The data will enable them to find trends in housing prices in relation to Minneapolis neighborhoods, recent crime rates, and home characteristics.
 
