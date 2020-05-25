@@ -4,7 +4,7 @@
 This project was prepared by Katrina Koenders, Stacy Konkiel and Jenna Nytes as part of the University of Minnesota Data Visualization and Analytics Bootcamp. The following project prepares data in response to a hypothetical scenario.
 
 ## Summary
-This project prepares data for a hypothetical real estate analysis team, who want to find opportunities for investment. The data will enable them to find trends in housing prices in relation to Minneapolis neighborhoods, recent crime rates, and home characteristics.
+This project prepares data for a real estate analysis team, who want to find opportunities for investment. The data will enable them to find trends in housing prices in relation to Minneapolis neighborhoods, recent crime rates, and home characteristics.
 
 An example table that could be eventually generated using this database might be:
 
@@ -58,7 +58,7 @@ An example table that could be eventually generated using this database might be
 * Assessor and police tables both included neighborhood identifiers, but for the sake of standardization and database size, we decided to replace names with neighborhood IDs.
 
 ## PostgreSQL database
-![ERD](./erd.png =954x)
+![ERD](./erd.png)
 
 **neighborhood** 
 * id INT PRIMARY KEY
