@@ -1,15 +1,17 @@
 # Minneapolis Home Pricing Forecast - ETL Report
 
 ## Summary
-This project prepares data for the real estate analysis team, who want to find opportunities for investment. The data will enable them to find trends in housing prices in relation to Minneapolis neighborhoods, recent crime rates, and home characteristics.
+This project prepares data for a hypothetical real estate analysis team, who want to find opportunities for investment. The data will enable them to find trends in housing prices in relation to Minneapolis neighborhoods, recent crime rates, and home characteristics.
 
 An example table that could be eventually generated using this database might be:
 
+```
 ‘neighborhood_trends’ view
   neighborhood_id = Column(Integer)
   avg_home_price = Column(Integer)
   value_per_sqft = Column(Integer)
   crime_rate = Column(Float)
+```
 
 ## Data sources
 * City of Minneapolis  [Neighborhood](http://opendata.minneapolismn.gov/datasets/minneapolis-neighborhoods)  data - a canonical set of neighborhoods and identifiers
@@ -53,28 +55,30 @@ An example table that could be eventually generated using this database might be
 * Assessor and police tables both included neighborhood identifiers, but for the sake of standardization and database size, we decided to replace names with neighborhood IDs.
 
 ## PostgreSQL database
-**‘neighborhood’ table**
-* id = Column(Integer, primary_key=True)
-* neighborhood = Column(String(255))
-* population_2010 = Column(Integer)
+**neighborhood** 
+* id INT PRIMARY KEY
+* neighborhood VARCHAR(255)
+* population_2010 INT
 
-**‘crime’ table**
-* id = Column(Integer, primary_key=True)
-* neighborhood_id = Column(Integer)
-* crime_description = Column(String(255))
-* latitude = Column(Float)
-* longitude = Column(Float)
+**crime**
+* id INT PRIMARY KEY
+* neighborhood_id INT
+* crime_description VARCHAR(255)
+* latitude NUMERIC(13)
+* longitude NUMERIC(13)
+* FOREIGN KEY (neighborhood_id) REFERENCES neighborhood (id)
 
-**‘home_value’ table**
-* id = Column(Integer, primary_key=True)
-* property_type = Column(String(255))
-* num_bedrooms = Column(Integer)
-* below_grade_sq_footage = Column(Integer)
-* above_grade_sq_footage = Column(Integer)
-* sq_footage_parcel = Column(Integer)
-* address = Column(String(255))
-* landuse = Column(String(255))
-* value_total = Column(Integer)
-* sq_footage_house = Column(Integer)
-* value_per_sq_foot = Column(Float)
-* neighborhood_id = Column(Integer)
+**home_value** 
+* id INT PRIMARY KEY
+* neighborhood_id INT
+* property_type VARCHAR(255)
+* num_bedrooms INT
+* below_grade_sq_footage INT
+* above_grade_sq_footage INT
+* sq_footage_parcel INT
+* address VARCHAR(255)
+* landuse VARCHAR(255)
+* value_total MONEY
+* sq_footage_house INT
+* value_per_sq_foot MONEY
+* FOREIGN KEY (neighborhood_id) REFERENCES neighborhood (id)

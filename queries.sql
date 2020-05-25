@@ -12,14 +12,15 @@ CREATE TABLE neighborhood (
 CREATE TABLE crime (
     id INT PRIMARY KEY,
     neighborhood_id INT,
-    description VARCHAR(255),
-    latitude FLOAT,
-    longitude FLOAT,
+    crime_description VARCHAR(255),
+    latitude NUMERIC(13),
+    longitude NUMERIC(13),
     FOREIGN KEY (neighborhood_id) REFERENCES neighborhood (id)
 );
 
 CREATE TABLE home_value (
     id INT PRIMARY KEY,
+    neighborhood_id INT,
     property_type VARCHAR(255),
     num_bedrooms INT,
     below_grade_sq_footage INT,
@@ -27,9 +28,8 @@ CREATE TABLE home_value (
     sq_footage_parcel INT,
     address VARCHAR(255),
     landuse VARCHAR(255),
-    value_total INT,
+    value_total MONEY,
     sq_footage_house INT,
-    value_per_sq_foot FLOAT,
-    neighborhood_id INT
+    value_per_sq_foot MONEY,
     FOREIGN KEY (neighborhood_id) REFERENCES neighborhood (id)
 );
